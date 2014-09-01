@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     core.dependency 'Interpreter/cocos2d'
     core.dependency 'Interpreter/wax'
     core.dependency 'Interpreter/haru'
-    core.xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -all_load', 'HEADER_SEARCH_PATHS' => '$(inherited) /usr/include/libxml2' }
+    core.xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -all_load', 'HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT) /usr/include/libxml2' }
     core.source_files = 'VIP\ Library/*.{h,m}', 'VIP\ Library/Actions/*.{h,m"}', 'VIP\ Library/Additions/*.{h,m}', 'VIP\ Library/Audio/*.{h,m}', 'VIP\ Library/cocos2d Unofficial Sources/**/*.{h,m}', 'VIP\ Library/Database/Models/*.{h,m}', 'VIP\ Library/Database/ORM/*.{h,m}', 'VIP\ Library/PDF/*.{h,m}', 'VIP\ Library/Social\ Networks/*.{h,m}', 'VIP\ Library/Sprites/**/*.{h,m}', 'VIP\ Library/Support/*.{h,m}', 'VIP\ Library/Transitions/*.{h,m}', 'VIP\ Library/XML/**/*.{h,m}'
     core.exclude_files = arc_files, 'VIP\ Library/Sprites/**/VIPComAir*.{h,m}'
     core.public_header_files = 'VIP\ Library/*.h', 'VIP\ Library/Actions/*.h', 'VIP\ Library/Additions/*.h', 'VIP\ Library/Audio/*.h', 'VIP\ Library/cocos2d Unofficial Sources/**/*.h', 'VIP\ Library/Database/Models/*.h', 'VIP\ Library/Database/ORM/*.h', 'VIP\ Library/PDF/*.h', 'VIP\ Library/Social\ Networks/*.{h,m}', 'VIP\ Library/Sprites/**/*.h', 'VIP\ Library/Support/*.h', 'VIP\ Library/Transitions/*.h', 'VIP\ Library/XML/**/*/h'
@@ -53,6 +53,7 @@ Pod::Spec.new do |s|
     png.libraries = 'z'
     png.xcconfig = { 'HEADER_SEARCH_PATHS' => '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include', 'PRIVATE_HEADERS_FOLDER_PATH' => '/usr/local/include' }
     png.source_files = 'VIP\ Library/libs/libpng_1_5_4/*.{h,m,c}'
+    png.exclude_files = 'VIP\ Library/libs/libpng_1_5_4/pngtest.c', 'VIP\ Library/libs/libpng_1_5_4/pngvalid.c'
     png.public_header_files = 'VIP\ Library/libs/libpng_1_5_4/*.h'
   end
 

@@ -38,6 +38,7 @@ Pod::Spec.new do |s|
     cocos2d.libraries = 'z'
     cocos2d.source_files = 'VIP\ Library/libs/cocos2d/**/*.{h,m,c}', 'VIP\ Library/libs/CocosDenshion/**/*.{h,m}', 'VIP\ Library/libs/cocoslive/**/*.{h,m}', 'VIP\ Library/libs/FontLabel/**/*.{h,m}', 'VIP\ Library/libs/TouchJSON/**/*.{h,m}'
     cocos2d.public_header_files = 'VIP\ Library/libs/cocos2d/**/*.h', 'VIP\ Library/libs/CocosDenshion/**/*.h', 'VIP\ Library/libs/cocoslive/**/*.h', 'VIP\ Library/libs/FontLabel/**/*.h', 'VIP\ Library/libs/TouchJSON/**/*.h'
+    cocos2d.header_mappings_dir = 'cocos2d'
   end
 
   s.subspec 'wax' do |wax|

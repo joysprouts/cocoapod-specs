@@ -6,7 +6,7 @@ Pod::Spec.new do |s|
   s.summary = 'Interprets scripts and content markups created using a proprietary mechanism'
   s.homepage = 'http://joysprouts.com'
   s.authors = { 'Stanley Lam' => 'stanleylam@joyaehter.com', 'Matthew Lo' => 'matthewlo@joyaether.com' }
-  s.source = { :git => 'https://github.com/joysprouts/interpreter.git' }
+  s.source = { :git => 'https://github.com/joysprouts/interpreter.git', :branch => 'develop' }
   s.requires_arc = false
   s.default_subspec = 'core'
 

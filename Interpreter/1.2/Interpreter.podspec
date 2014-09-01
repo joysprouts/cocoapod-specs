@@ -50,6 +50,7 @@ Pod::Spec.new do |s|
 
   s.subspec 'png' do |png|
     png.requires_arc = false
+    png.libraries = 'z'
     png.xcconfig = { 'HEADER_SEARCH_PATHS' => '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include', 'PRIVATE_HEADERS_FOLDER_PATH' => '/usr/local/include' }
     png.source_files = 'VIP\ Library/libs/libpng_1_5_4/*.{h,m,c}'
     png.public_header_files = 'VIP\ Library/libs/libpng_1_5_4/*.h'

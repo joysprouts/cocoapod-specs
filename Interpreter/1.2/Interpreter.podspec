@@ -28,7 +28,7 @@ Pod::Spec.new do |s|
     core.dependency 'Interpreter/kiss'
     core.xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -all_load', 'HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT) /usr/include/libxml2' }
     core.source_files = 'VIP\ Library/*.{h,m}', 'VIP\ Library/Actions/*.{h,m}', 'VIP\ Library/Additions/*.{h,m}', 'VIP\ Library/Audio/*.{h,m}', 'VIP\ Library/cocos2d Unofficial Sources/**/*.{h,m}', 'VIP\ Library/Database/Models/*.{h,m}', 'VIP\ Library/Database/ORM/*.{h,m}', 'VIP\ Library/PDF/*.{h,m}', 'VIP\ Library/Sprites/**/*.{h,m}', 'VIP\ Library/Support/*.{h,m}', 'VIP\ Library/Transitions/*.{h,m}', 'VIP\ Library/XML/**/*.{h,m}'
-    core.exclude_files = exclude_files 
+    core.exclude_files = exclude_files
     core.public_header_files = 'VIP\ Library/*.h', 'VIP\ Library/Actions/*.h', 'VIP\ Library/Additions/*.h', 'VIP\ Library/Audio/*.h', 'VIP\ Library/cocos2d Unofficial Sources/**/*.h', 'VIP\ Library/Database/Models/*.h', 'VIP\ Library/Database/ORM/*.h', 'VIP\ Library/PDF/*.h', 'VIP\ Library/Sprites/**/*.h', 'VIP\ Library/Support/*.h', 'VIP\ Library/Transitions/*.h', 'VIP\ Library/XML/**/*.h'
     core.resource_bundle = { 'VIPInterpreterBundle' => ['VIP\ Library/Resources/**/*', 'VIP\ Library/Sprites/**/*.{xml,plist}', 'VIP\ Library/Actions/**/*.{xml,plist}'] }
   end
@@ -47,7 +47,8 @@ Pod::Spec.new do |s|
   end
 
   s.subspec 'facebook' do |fb|
-    fb.dependency 'Facebook-iOS-SDK', '~>3.17'
+    fb.dependency 'Facebook-iOS-SDK', '~>1.last'
+    fb.dependency 'Interpreter/core'
     fb.requires_arc = false
     fb.source_files = fb_files
     fb.public_header_files = 'VIP\ Library/Social\ Networks/*.h', 'VIP\ Library/Sprites/**/*Facebook*.h'

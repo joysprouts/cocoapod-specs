@@ -18,6 +18,7 @@ Pod::Spec.new do |s|
     core.dependency 'FMDB', '~>2.3'
     core.dependency 'Facebook-iOS-SDK', '~>1.last'
     core.dependency 'Interpreter/cocos2d'
+    core.dependency 'Interpreter/ddmath'
     core.dependency 'Interpreter/wax'
     core.dependency 'Interpreter/haru'
     core.xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -all_load', 'HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT) /usr/include/libxml2' }
@@ -30,6 +31,14 @@ Pod::Spec.new do |s|
   s.subspec 'kiss' do |kiss|
     kiss.requires_arc = true
     kiss.source_files = arc_files
+  end
+
+  s.subspec 'ddmath' do |ddmath|
+    ddmath.requires_arc = false
+    ddmath.frameworks = 'Foundation'
+    ddmath.source_files = 'VIP\ Library/libs/DDMathParser/**/*.{h,m}'
+    ddmath.public_header_files = 'VIP\ Library/libs/DDMathParser/**/DD*.h', 'VIP\ Library/libs/DDMathParser/**/*+DDMath*.h'
+    ddmath.private_header_files = 'VIP\ Library/libs/DDMathParser/**/_*.h'
   end
 
   s.subspec 'cocos2d' do |cocos2d|

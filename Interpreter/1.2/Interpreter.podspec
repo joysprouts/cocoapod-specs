@@ -10,9 +10,7 @@ Pod::Spec.new do |s|
   s.requires_arc = false
   s.default_subspec = 'core'
 
-  arc_files = 'VIP\ Library/XML/KissXML/**/*.m'
   fb_files = 'VIP\ Library/Social\ Networks/*.{h,m}', 'VIP\ Library/Sprites/**/*Facebook*.{h,m}'
-  excludes = arc_files, fb_files
 
   s.subspec 'core' do |core|
     core.frameworks = 'MessageUI', 'CoreLocation', 'CoreMedia', 'MapKit', 'MediaPlayer', 'UIKit', 'Foundation'
@@ -25,14 +23,14 @@ Pod::Spec.new do |s|
     core.dependency 'Interpreter/kiss'
     core.xcconfig = { 'OTHER_LDFLAGS' => '$(inherited) -ObjC -all_load', 'HEADER_SEARCH_PATHS' => '$(inherited) $(SRCROOT) /usr/include/libxml2' }
     core.source_files = 'VIP\ Library/*.{h,m}', 'VIP\ Library/Actions/*.{h,m}', 'VIP\ Library/Additions/*.{h,m}', 'VIP\ Library/Audio/*.{h,m}', 'VIP\ Library/cocos2d Unofficial Sources/**/*.{h,m}', 'VIP\ Library/Database/Models/*.{h,m}', 'VIP\ Library/Database/ORM/*.{h,m}', 'VIP\ Library/PDF/*.{h,m}', 'VIP\ Library/Sprites/**/*.{h,m}', 'VIP\ Library/Support/*.{h,m}', 'VIP\ Library/Transitions/*.{h,m}', 'VIP\ Library/XML/**/*.{h,m}'
-    core.exclude_files = excludes, 'VIP\ Library/Sprites/**/VIPComAir*.{h,m}'
+    core.exclude_files = fb_files, 'VIP\ Library/XML/KissXML/**/*.m', 'VIP\ Library/Sprites/**/VIPComAir*.{h,m}'
     core.public_header_files = 'VIP\ Library/*.h', 'VIP\ Library/Actions/*.h', 'VIP\ Library/Additions/*.h', 'VIP\ Library/Audio/*.h', 'VIP\ Library/cocos2d Unofficial Sources/**/*.h', 'VIP\ Library/Database/Models/*.h', 'VIP\ Library/Database/ORM/*.h', 'VIP\ Library/PDF/*.h', 'VIP\ Library/Sprites/**/*.h', 'VIP\ Library/Support/*.h', 'VIP\ Library/Transitions/*.h', 'VIP\ Library/XML/**/*.h'
     core.resource_bundle = { 'VIPInterpreterBundle' => ['VIP\ Library/Resources/**/*', 'VIP\ Library/Sprites/**/*.{xml,plist}', 'VIP\ Library/Actions/**/*.{xml,plist}'] }
   end
 
   s.subspec 'kiss' do |kiss|
     kiss.requires_arc = true
-    kiss.source_files = arc_files
+    kiss.source_files = 'VIP\ Library/XML/KissXML/**/*.m'
   end
 
   s.subspec 'ddmath' do |ddmath|

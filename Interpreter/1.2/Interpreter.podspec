@@ -69,7 +69,7 @@ Pod::Spec.new do |s|
     wax.libraries = 'sqlite3', 'xml2'
     wax.source_files = 'VIP\ Library/libs/wax/**/*.{h,m,c}'
     wax.public_header_files = 'VIP\ Library/libs/wax/**/*.h'
-    wax.preserve_paths = 'VIP\ Library/libs/wax/**/*.{sh,lua}'
+    wax.preserve_paths = 'VIP\ Library/libs/wax/**/*.{sh,lua}', "Scripts/**/*.{sh,lua}"
   end
 
   s.subspec 'png' do |png|

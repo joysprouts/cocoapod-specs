@@ -2,6 +2,7 @@ Pod::Spec.new do |s|
   s.name = 'Interpreter'
   s.version = '1.2'
   s.platform = :ios, '6.0'
+  s.ios.deployment_target = '6.0'
   s.license = 'Private'
   s.summary = 'Interprets scripts and content markups created using a proprietary mechanism'
   s.homepage = 'http://joysprouts.com'
